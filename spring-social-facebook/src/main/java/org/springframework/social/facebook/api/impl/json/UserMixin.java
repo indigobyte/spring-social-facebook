@@ -67,22 +67,13 @@ abstract class UserMixin extends FacebookObjectMixin {
 	
 	@JsonProperty("last_name")
 	String lastName;
-	
-	@JsonProperty("cover")
-	CoverPhoto cover;
-	
-	@JsonProperty("gender")
-	String gender;
-	
+
 	@JsonProperty("installed")
 	boolean installed;
 	
 	@JsonProperty("install_type")
 	String installType;
-	
-	@JsonProperty("locale")
-	Locale locale;
-	
+
 	@JsonProperty("middle_name")
 	String middleName;
 
@@ -94,22 +85,10 @@ abstract class UserMixin extends FacebookObjectMixin {
 	
 	@JsonProperty("email")
 	String email;
-	
-	@JsonProperty("link")
-	String link;
-	
+
 	@JsonProperty("third_party_id")
 	String thirdPartyId;
-	
-	@JsonProperty("timezone")
-	Float timezone;
-	
-	@JsonProperty("updated_time")
-	Date updatedTime;
-	
-	@JsonProperty("verified")
-	Boolean verified; 
-	
+
 	@JsonProperty("birthday")
 	String birthday;
 	
@@ -172,20 +151,5 @@ abstract class UserMixin extends FacebookObjectMixin {
 	
 	@JsonProperty("website")
 	String website;
-	
-	@JsonProperty("age_range")
-	@JsonDeserialize(using=AgeRangeDeserializer.class)
-	AgeRange ageRange;
 
-	private static class AgeRangeDeserializer extends JsonDeserializer<AgeRange> {
-		@Override
-		public AgeRange deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-			JsonNode ageRangeNode = jp.readValueAs(JsonNode.class);
-			JsonNode minNode = (JsonNode) ageRangeNode.get("min");
-			JsonNode maxNode = (JsonNode) ageRangeNode.get("max");
-			Integer min = minNode != null ? minNode.asInt() : null;
-			Integer max = maxNode != null ? maxNode.asInt() : null;
-			return AgeRange.fromMinMax(min, max);
-		}
-	}
 }

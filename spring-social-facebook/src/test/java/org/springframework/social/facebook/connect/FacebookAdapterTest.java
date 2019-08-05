@@ -15,10 +15,6 @@
  */
 package org.springframework.social.facebook.connect;
 
-import static org.junit.Assert.*;
-
-import java.lang.reflect.Field;
-
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.springframework.social.connect.ConnectionValues;
@@ -27,85 +23,90 @@ import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.User;
 import org.springframework.social.facebook.api.UserOperations;
 
+import java.lang.reflect.Field;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 public class FacebookAdapterTest {
 
-	private static final String API_VERSION = "2.8";
+    private static final String API_VERSION = "2.8";
 
-	private static final String GRAPH_API_URL = "https://graph.facebook.com/" + API_VERSION + "/";
+    private static final String GRAPH_API_URL = "https://graph.facebook.com/" + API_VERSION + "/";
 
-	private FacebookAdapter apiAdapter = new FacebookAdapter();
-	
-	private Facebook facebook = Mockito.mock(Facebook.class);
-	
-	@Test
-	public void fetchProfile() {		
-		UserOperations userOperations = Mockito.mock(UserOperations.class);
-		Mockito.when(facebook.userOperations()).thenReturn(userOperations);
-		Mockito.when(facebook.getBaseGraphApiUrl()).thenReturn(GRAPH_API_URL);
-		Mockito.when(userOperations.getUserProfile()).thenReturn(new User("12345678", "Craig Walls", "Craig", "Walls", null, null));
-		UserProfile profile = apiAdapter.fetchUserProfile(facebook);
-		assertEquals("12345678", profile.getId());
-		assertEquals("Craig Walls", profile.getName());
-		assertEquals("Craig", profile.getFirstName());
-		assertEquals("Walls", profile.getLastName());
-		assertNull(profile.getEmail());
-		assertNull(profile.getUsername());
-	}
+    private FacebookAdapter apiAdapter = new FacebookAdapter();
 
-	@Test
-	public void setConnectionValues() throws Exception {
-		User user = new User("12345678", "Craig Walls", "Craig", "Walls", null, null);
-		Field linkField = user.getClass().getDeclaredField("link");
-		linkField.setAccessible(true);
-		linkField.set(user, "https://www.facebook.com/975041837");
-		Mockito.when(facebook.fetchObject("me", User.class, "id", "name", "link")).thenReturn(user);
-		Mockito.when(facebook.getBaseGraphApiUrl()).thenReturn(GRAPH_API_URL);
-		TestConnectionValues connectionValues = new TestConnectionValues();
-		apiAdapter.setConnectionValues(facebook, connectionValues);
-		assertEquals("Craig Walls", connectionValues.getDisplayName());
-		assertEquals(GRAPH_API_URL + "12345678/picture", connectionValues.getImageUrl());
-		assertEquals("https://www.facebook.com/975041837", connectionValues.getProfileUrl());
-		assertEquals("12345678", connectionValues.getProviderUserId());
-	}
+    private Facebook facebook = Mockito.mock(Facebook.class);
 
-	private static class TestConnectionValues implements ConnectionValues {
+    @Test
+    public void fetchProfile() {
+        UserOperations userOperations = Mockito.mock(UserOperations.class);
+        Mockito.when(facebook.userOperations()).thenReturn(userOperations);
+        Mockito.when(facebook.getBaseGraphApiUrl()).thenReturn(GRAPH_API_URL);
+        Mockito.when(userOperations.getUserProfile()).thenReturn(new User("12345678", "Craig Walls", "Craig", "Walls"));
+        UserProfile profile = apiAdapter.fetchUserProfile(facebook);
+        assertEquals("12345678", profile.getId());
+        assertEquals("Craig Walls", profile.getName());
+        assertEquals("Craig", profile.getFirstName());
+        assertEquals("Walls", profile.getLastName());
+        assertNull(profile.getEmail());
+        assertNull(profile.getUsername());
+    }
 
-		private String displayName;
-		private String imageUrl;
-		private String profileUrl;
-		private String providerUserId;
+    @Test
+    public void setConnectionValues() throws Exception {
+        User user = new User("12345678", "Craig Walls", "Craig", "Walls");
+        Field linkField = user.getClass().getDeclaredField("link");
+        linkField.setAccessible(true);
+        linkField.set(user, "https://www.facebook.com/975041837");
+        Mockito.when(facebook.fetchObject("me", User.class, "id", "name", "link")).thenReturn(user);
+        Mockito.when(facebook.getBaseGraphApiUrl()).thenReturn(GRAPH_API_URL);
+        TestConnectionValues connectionValues = new TestConnectionValues();
+        apiAdapter.setConnectionValues(facebook, connectionValues);
+        assertEquals("Craig Walls", connectionValues.getDisplayName());
+        assertEquals(GRAPH_API_URL + "12345678/picture", connectionValues.getImageUrl());
+        assertEquals("https://www.facebook.com/975041837", connectionValues.getProfileUrl());
+        assertEquals("12345678", connectionValues.getProviderUserId());
+    }
 
-		public String getDisplayName() {
-			return displayName;
-		}
+    private static class TestConnectionValues implements ConnectionValues {
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
+        private String displayName;
+        private String imageUrl;
+        private String profileUrl;
+        private String providerUserId;
 
-		public String getImageUrl() {
-			return imageUrl;
-		}
+        public String getDisplayName() {
+            return displayName;
+        }
 
-		public void setImageUrl(String imageUrl) {
-			this.imageUrl = imageUrl;
-		}
+        public void setDisplayName(String displayName) {
+            this.displayName = displayName;
+        }
 
-		public String getProfileUrl() {
-			return profileUrl;
-		}
+        public String getImageUrl() {
+            return imageUrl;
+        }
 
-		public void setProfileUrl(String profileUrl) {
-			this.profileUrl = profileUrl;
-		}
+        public void setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+        }
 
-		public String getProviderUserId() {
-			return providerUserId;
-		}
+        public String getProfileUrl() {
+            return profileUrl;
+        }
 
-		public void setProviderUserId(String providerUserId) {
-			this.providerUserId = providerUserId;
-		}
-		
-	}
+        public void setProfileUrl(String profileUrl) {
+            this.profileUrl = profileUrl;
+        }
+
+        public String getProviderUserId() {
+            return providerUserId;
+        }
+
+        public void setProviderUserId(String providerUserId) {
+            this.providerUserId = providerUserId;
+        }
+
+    }
 }

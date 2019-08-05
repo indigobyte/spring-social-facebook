@@ -3,7 +3,7 @@ To check out the project and build from source, do the following:
 
  git clone git://github.com/SpringSource/spring-social-facebook.git
  cd spring-social-facebook
- ./gradlew build
+ ./gradlew clean build -x test -x springReleaseTest -x springSnapshotTest
 
 -------------------------------------------------------------------------------
 To generate Eclipse metadata (.classpath and .project files), do the following:
@@ -26,3 +26,16 @@ To build the JavaDoc, do the following from within the root directory:
 
 The result will be available in 'docs/build/api'.
 ===============================================================================
+To create maven artifact:
+ Create new empty directory maven-temp in the project root.
+ Checkout spring-social-facebook into maven-temp.
+ Switch to branch mvn-repo. You should have directory structure like this:
+ c:\projects\spring-social-facebook\maven-temp\spring-social-facebook\org\springframework\social\spring-social-facebook\1.0.2.CUSTOM\maven-metadata.xml
+ Go to root project dir (c:\projects\spring-social-facebook).
+ run command
+ ./gradlew clean build publish -x test -x springReleaseTest -x springSnapshotTest
+ Go back to maven-temp\spring-social-facebook folder
+ c:\projects\spring-social-facebook\maven-temp\spring-social-facebook\org\springframework\social\spring-social-facebook\
+ Commit and push mvn-repo branch.
+
+===============================================================================  
