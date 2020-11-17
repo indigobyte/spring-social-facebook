@@ -139,16 +139,10 @@ abstract class UserMixin extends FacebookObjectMixin {
 	
 	@JsonProperty("sports")
 	List<Experience> sports;
-	
-	@JsonProperty("test_group")
-	int testGroup;
-	
+
 	@JsonProperty("video_upload_limits")
 	VideoUploadLimits videoUploadLimits;
-	
-	@JsonProperty("viewer_can_send_gift")
-	boolean viewerCanSendGift;
-	
+
 	@JsonProperty("website")
 	String website;
 

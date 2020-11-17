@@ -130,8 +130,8 @@ public interface UserOperations {
 		"id", "about", "birthday", "education", "email",
 		"favorite_athletes", "favorite_teams", "first_name", "hometown", "inspirational_people", "installed", "install_type",
 		"is_verified", "languages", "last_name", "location", "meeting_for", "middle_name", "name", "name_format",
-		"political", "quotes", "payment_pricepoints", "relationship_status", "religion", "security_settings", "significant_other", 
-		"sports", "test_group", "third_party_id", "video_upload_limits", "viewer_can_send_gift",
+		"political", "quotes", "payment_pricepoints", "relationship_status", "religion",  "significant_other",
+		"sports", "third_party_id", "video_upload_limits",
 		"website", "work"
 	};
 

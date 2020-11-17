@@ -88,13 +88,9 @@ public class User extends FacebookObject implements Serializable {
 	private Reference significantOther;
 	
 	private List<Experience> sports;
-	
-	private int testGroup;
-	
+
 	private String thirdPartyId;
 
-	private boolean viewerCanSendGift;
-	
 	private String website;
 
 	private List<WorkEntry> work;
@@ -330,15 +326,7 @@ public class User extends FacebookObject implements Serializable {
 	public Reference getSignificantOther() {
 		return significantOther;
 	}
-	
-	public int getTestGroup() {
-		return testGroup;
-	}
 
-	public boolean viewerCanSendGift() {
-		return viewerCanSendGift;
-	}
-	
 	/**
 	 * The user's work history.
 	 * Available only with "user_work_history" permission.
