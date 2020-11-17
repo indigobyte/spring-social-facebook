@@ -34,17 +34,9 @@ public class User extends FacebookObject implements Serializable {
 	private String about;
 	
 	private Location address;
-	
-	private AgeRange ageRange = AgeRange.UNKNOWN;
 
 	private String birthday;
-	
-	private CoverPhoto cover;
-	
-	private Currency currency;
-	
-	private List<Device> devices;
-	
+
 	private List<EducationExperience> education;
 	
 	private String email;
@@ -54,8 +46,6 @@ public class User extends FacebookObject implements Serializable {
 	private List<Reference> favoriteTeams;
 	
 	private String firstName;
-	
-	private String gender;
 
 	private Reference hometown;
 	
@@ -72,10 +62,6 @@ public class User extends FacebookObject implements Serializable {
 	private List<Reference> languages;
 	
 	private String lastName;
-
-	private String link;
-
-	private Locale locale;
 
 	private Reference location;
 	
@@ -107,12 +93,6 @@ public class User extends FacebookObject implements Serializable {
 	
 	private String thirdPartyId;
 
-	private Float timezone;
-	
-	private Date updatedTime;
-
-	private Boolean verified;
-
 	private boolean viewerCanSendGift;
 	
 	private String website;
@@ -123,13 +103,11 @@ public class User extends FacebookObject implements Serializable {
 	
 	User() {}
 	
-	public User(String id, String name, String firstName, String lastName, String gender, Locale locale) {
+	public User(String id, String name, String firstName, String lastName) {
 		this.id = id;
 		this.name = name;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.gender = gender;
-		this.locale = locale;
 	}
 
 	/**
@@ -193,24 +171,8 @@ public class User extends FacebookObject implements Serializable {
 		return nameFormat;
 	}
 	
-	/**
-	 * The user's gender
-	 * @return the user's gender
-	 */
-	public String getGender() {
-		return gender;
-	}
-
 	public List<String> getInterestedIn() {
 		return interestedIn;
-	}
-	
-	/**
-	 * The user's locale
-	 * @return the user's locale
-	 */
-	public Locale getLocale() {
-		return locale;
 	}
 
 	/**
@@ -221,15 +183,6 @@ public class User extends FacebookObject implements Serializable {
 	public String getEmail() {
 	    return email;
     }
-	
-	/**
-	 * A link to the user's profile on Facebook.
-	 * Available only if requested by an authenticated user.
-	 * @return the user's profile link or null if requested anonymously
-	 */
-	public String getLink() {
-		return link;
-	}
 
 	/**
 	 * A link to the user's personal website. Available only with "user_website" permission.
@@ -249,33 +202,7 @@ public class User extends FacebookObject implements Serializable {
 	public String getThirdPartyId() {
 		return thirdPartyId;
 	}
-	
-	/**
-	 * The user's timezone offset from UTC.
-	 * Available only for the authenticated user.
-	 * @return the user's timezone offset from UTC or null if the user isn't the authenticated user
-	 */
-	public Float getTimezone() {
-		return timezone;
-	}
-	
-	/**
-	 * The last time the user's profile was updated.
-	 * @return the time that the user's profile was updated
-	 */
-	public Date getUpdatedTime() {
-		return updatedTime;
-	}
-	
-	/**
-	 * The user's account verification status.
-	 * Available only if requested by an authenticated user.
-	 * @return true if the profile has been verified, false if it has not, or null if not available.
-	 */
-	public Boolean isVerified() {
-		return verified;
-	}
-	
+
 	/**
 	 * The user's brief about blurb.
 	 * Available only with "user_about_me" permission for the authenticated user for the authenticated user's friends.
@@ -429,15 +356,7 @@ public class User extends FacebookObject implements Serializable {
 	public List<EducationExperience> getEducation() {
 		return education;
 	}
-	
-	/**
-	 * The user's age range.
-	 * @return an {@link AgeRange} for the user. Will be {@link AgeRange#UNKNOWN} if the age_range isn't available or if the range given does match the known ranges.
-	 */
-	public AgeRange getAgeRange() {
-		return ageRange;
-	}
-	
+
 	/**
 	 * @return true if the user has the calling application installed
 	 */
@@ -448,28 +367,7 @@ public class User extends FacebookObject implements Serializable {
 	public String getInstallType() {
 		return installType;
 	}
-	
-	/**
-	 * @return the user's cover photo
-	 */
-	public CoverPhoto getCover() {
-		return cover;
-	}
-	
-	/**
-	 * @return a list of devices that user has accessed Facebook with.
-	 */
-	public List<Device> getDevices() {
-		return devices;
-	}
-	
-	/**
-	 * @return the user's currency information
-	 */
-	public Currency getCurrency() {
-		return currency;
-	}
-	
+
 	/**
 	 * @return limits on the size and time length of videos the user can upload.
 	 */
