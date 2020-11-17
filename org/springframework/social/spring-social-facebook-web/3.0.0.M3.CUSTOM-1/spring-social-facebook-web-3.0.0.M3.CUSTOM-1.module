@@ -1,0 +1,191 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.springframework.social",
+    "module": "spring-social-facebook-web",
+    "version": "3.0.0.M3.CUSTOM-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7.1",
+      "buildId": "azes4vvrf5epvm3nmifmbttjbq"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework",
+          "module": "spring-web",
+          "version": {
+            "requires": "4.3.12.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework",
+          "module": "spring-webmvc",
+          "version": {
+            "requires": "4.3.12.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-core",
+          "version": {
+            "requires": "1.1.4.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-facebook",
+          "version": {
+            "requires": "3.0.0.M3.CUSTOM-1"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-databind",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-annotations",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "javax.servlet",
+          "module": "javax.servlet-api",
+          "version": {
+            "requires": "3.1.0"
+          }
+        },
+        {
+          "group": "javax.servlet.jsp",
+          "module": "javax.servlet.jsp-api",
+          "version": {
+            "requires": "2.3.2-b02"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "spring-social-facebook-web-3.0.0.M3.CUSTOM-1.jar",
+          "url": "spring-social-facebook-web-3.0.0.M3.CUSTOM-1.jar",
+          "size": 29775,
+          "sha512": "6599c09c4111b8a5b14c99d2725f66b871c9b08c01e7d150034fd30bcb9604c6f13a43dc2585aad5213dea47383dc783c5182e76f9e01665b273d32cc310fabc",
+          "sha256": "253fbd89ad8c4b782c7938b37f8aa29fcde72ab1abec4aed79cb30636a7ce83f",
+          "sha1": "cf0a9b8b68db608fd345c811919e2c7292759478",
+          "md5": "7251a18a051038937c06ba9768d903f7"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework",
+          "module": "spring-web",
+          "version": {
+            "requires": "4.3.12.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework",
+          "module": "spring-webmvc",
+          "version": {
+            "requires": "4.3.12.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-core",
+          "version": {
+            "requires": "1.1.4.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-facebook",
+          "version": {
+            "requires": "3.0.0.M3.CUSTOM-1"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-databind",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-annotations",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "javax.servlet",
+          "module": "javax.servlet-api",
+          "version": {
+            "requires": "3.1.0"
+          }
+        },
+        {
+          "group": "javax.servlet.jsp",
+          "module": "javax.servlet.jsp-api",
+          "version": {
+            "requires": "2.3.2-b02"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "spring-social-facebook-web-3.0.0.M3.CUSTOM-1.jar",
+          "url": "spring-social-facebook-web-3.0.0.M3.CUSTOM-1.jar",
+          "size": 29775,
+          "sha512": "6599c09c4111b8a5b14c99d2725f66b871c9b08c01e7d150034fd30bcb9604c6f13a43dc2585aad5213dea47383dc783c5182e76f9e01665b273d32cc310fabc",
+          "sha256": "253fbd89ad8c4b782c7938b37f8aa29fcde72ab1abec4aed79cb30636a7ce83f",
+          "sha1": "cf0a9b8b68db608fd345c811919e2c7292759478",
+          "md5": "7251a18a051038937c06ba9768d903f7"
+        }
+      ]
+    }
+  ]
+}

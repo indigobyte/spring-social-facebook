@@ -1,0 +1,163 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.springframework.social",
+    "module": "spring-social-facebook",
+    "version": "3.0.0.M3.CUSTOM-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7.1",
+      "buildId": "azes4vvrf5epvm3nmifmbttjbq"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-core",
+          "version": {
+            "requires": "1.1.4.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-config",
+          "version": {
+            "requires": "1.1.4.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-security",
+          "version": {
+            "requires": "1.1.4.RELEASE"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-databind",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-annotations",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "javax.servlet",
+          "module": "javax.servlet-api",
+          "version": {
+            "requires": "3.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "spring-social-facebook-3.0.0.M3.CUSTOM-1.jar",
+          "url": "spring-social-facebook-3.0.0.M3.CUSTOM-1.jar",
+          "size": 241550,
+          "sha512": "e59d18a75aa3effce8ceecf002e0787c7ece9b3eaa387cdef556a8205d3f26728db4ff477a7aa9bc4995d9f4862a6ff8402c7f75c71a7d8a17c2f725c73fb4f7",
+          "sha256": "5e1c918546cccff7e2a0498cd1e535f02d2607cbb58fc0a7695b21d7f84d1a79",
+          "sha1": "48ba4bc25f33c87cea3ef87e596c1de951f97155",
+          "md5": "5754f26b2f01f614ceddc7608ceb9e15"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-core",
+          "version": {
+            "requires": "1.1.4.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-config",
+          "version": {
+            "requires": "1.1.4.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.social",
+          "module": "spring-social-security",
+          "version": {
+            "requires": "1.1.4.RELEASE"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-databind",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-annotations",
+          "version": {
+            "requires": "2.7.3"
+          }
+        },
+        {
+          "group": "javax.servlet",
+          "module": "javax.servlet-api",
+          "version": {
+            "requires": "3.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "spring-social-facebook-3.0.0.M3.CUSTOM-1.jar",
+          "url": "spring-social-facebook-3.0.0.M3.CUSTOM-1.jar",
+          "size": 241550,
+          "sha512": "e59d18a75aa3effce8ceecf002e0787c7ece9b3eaa387cdef556a8205d3f26728db4ff477a7aa9bc4995d9f4862a6ff8402c7f75c71a7d8a17c2f725c73fb4f7",
+          "sha256": "5e1c918546cccff7e2a0498cd1e535f02d2607cbb58fc0a7695b21d7f84d1a79",
+          "sha1": "48ba4bc25f33c87cea3ef87e596c1de951f97155",
+          "md5": "5754f26b2f01f614ceddc7608ceb9e15"
+        }
+      ]
+    }
+  ]
+}
